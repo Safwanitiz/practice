@@ -1,0 +1,20 @@
+body{
+    background-color: #e4d2ce;
+}
+
+.input-div::placeholder{
+    color:whitesmoke
+}
+.input-div:focus{
+    outline: none;
+    box-shadow: 0 0 5px #964d3d;
+    color: whitesmoke;
+}
+button:hover{
+    opacity:0.8;
+    transition: 0.3s;
+    font-size: medium;
+    box-shadow: 0 0 5px #964d3d;
+    transform: scale(0.3s);
+
+}
