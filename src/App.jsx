@@ -75,39 +75,21 @@
 
 
 import React from "react";
-import { Routes, Route, Link, useParams } from "react-router-dom";
-
-function Home() {
-  return (
-    <div>
-      <h2>Home Page</h2>
-      <p>Click on a user to see details:</p>
-      <ul>
-        <li><Link to="/user/1">User 1</Link></li>
-        <li><Link to="/user/2">User 2</Link></li>
-        <li><Link to="/user/3">User 3</Link></li>
-      </ul>
-    </div>
-  );
-}
-
-function User() {
-  const { id } = useParams();
-  console.log("Params:", id); 
-  return (
-    <div>
-      <h2>User Page</h2>
-      <p>User ID: {id}</p>
-      <Link to="/">Back to Home</Link>
-    </div>
-  );
-}
+import { BrowserRouter as Router, Routes, Route, Link, Form } from "react-router-dom";
+import ListingPage from "./Components/listingpage";
+import DetailPage from "./Components/detailpage";
+import "./Components/style.css"
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/user/:id" element={<User />} />
-    </Routes>
+    <Router>
+      <div className="outer-div">
+    
+        <Routes>
+          <Route path="/" element={<ListingPage />} />
+          <Route path="/post/:id" element={<DetailPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
